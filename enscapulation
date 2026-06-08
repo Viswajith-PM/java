@@ -1,0 +1,19 @@
+ class BankAccount {
+    private int balance;
+    public void setBalance(int b) {
+        if (b > 0)
+            balance = b;
+        else
+            System.out.println("Invalid amount");
+    }
+    public int getBalance() {
+        return balance;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        BankAccount b = new BankAccount();
+        b.setBalance(5000);
+        System.out.println(b.getBalance());
+    }
+}
