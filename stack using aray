@@ -1,0 +1,33 @@
+package stack;
+
+public class ArrayStack {
+	static final int MAX_SIZE=30;
+	int arr[]=new int[MAX_SIZE];
+	int top;
+	
+	ArrayStack() {
+		top=-1;
+	}
+	void push(int val) {
+		if(top==MAX_SIZE-1)
+			throw new IndexOutOfBoundsException("Stack is Overflow");
+		arr[++top]=val;
+	}
+	public int pop() {
+		if(top==-1)
+			throw new IndexOutOfBoundsException("Stack is empty");
+		return arr[top--];
+	}
+	int peek() {
+		return arr[top];
+	}
+	public static void main(String[] args) {
+		ArrayStack stack=new ArrayStack();
+		stack.push(4);
+		stack.push(8);
+		stack.push(10);
+		System.out.println("popped" +stack.pop());
+		stack.peek();
+		
+	}
+}
